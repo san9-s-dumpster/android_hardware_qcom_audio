@@ -62,6 +62,7 @@ include $(BUILD_SHARED_LIBRARY)
 #             Make the apps-test (mm-aenc-omxaac-test)
 # ---------------------------------------------------------------------------------
 
+ifneq ($(QCPATH),)
 include $(CLEAR_VARS)
 
 mm-aac-enc-test-inc    := $(LOCAL_PATH)/inc
@@ -82,6 +83,7 @@ ifneq ($(filter kona lahaina holi,$(TARGET_BOARD_PLATFORM)),)
 LOCAL_SANITIZE := integer_overflow
 endif
 include $(BUILD_EXECUTABLE)
+endif # QCPATH
 
 endif
 
